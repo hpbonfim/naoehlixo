@@ -1,0 +1,47 @@
+footer {
+    display: flex;
+
+}
+
+footer .background,
+img {
+    pointer-events: none;
+}
+
+footer .background {
+    width: 99vw;
+}
+
+footer .text-container,
+.social-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 99%;
+}
+
+footer .text-container {
+    margin-top: 7%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .text-container p {
+    color: white;
+    font-weight: bold;
+    font-size: 1vw;
+}
+
+footer .social-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%;
+    margin-left: 30%;
+    width: 40%;
+}
+
+footer .social-container img {
+    width: 2vw;
+}

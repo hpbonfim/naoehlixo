@@ -1,0 +1,151 @@
+header {
+    display: flex;
+}
+
+header .background {
+    width: 99vw;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+}
+
+header .background,
+.logo,
+.botao {
+    pointer-events: none;
+}
+
+header .top-container,
+.title-container,
+.subtitle-container,
+.botao-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 99%;
+}
+
+/* TOP CONTAINER */
+header .top-container {
+    justify-content: space-between;
+    width: 99%;
+}
+
+
+header .top-container .logo {
+    width: 10%;
+}
+
+
+header .top-container .nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2%;
+    width: 50%;
+}
+
+header .top-container .nav-container a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1vw;
+}
+
+header .top-container .nav-container a:hover {
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .5), 7px 7px 7px rgba(0, 0, 0, .4), 10px 10px 10px rgba(0, 0, 0, .1);
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+/* TITLE CONTAINER */
+header .title-container {
+    margin-top: 3%;
+    margin-left: 1%;
+}
+
+header .title-container h1 {
+    font-size: 10vw;
+    color: white;
+    text-shadow: 1px 1px black,
+        2px 2px black,
+        3px 3px black,
+        4px 4px black,
+        5px 5px black,
+        6px 6px black,
+        7px 7px black;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+
+}
+
+header .title-container h1:hover {
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, .5), 20px 20px 20px rgba(0, 0, 0, .4), 30px 30px 30px rgba(0, 0, 0, .2);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+
+/* SUBTITLE CONTAINER */
+header .subtitle-container {
+    margin-top: 20%;
+}
+
+header .subtitle-container h1 {
+    font-size: 2vw;
+    color: white;
+    text-shadow: 1px 1px black,
+        2px 2px black,
+        3px 3px black;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+}
+
+header .subtitle-container h1:hover {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .5), 7px 7px 7px rgba(0, 0, 0, .4), 10px 10px 10px rgba(0, 0, 0, .1);
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+}
+
+/* BOTÃO CONTAINER */
+header .botao-container {
+    margin-top: 25%;
+    width: auto;
+    height: auto;
+    margin-left: 49%;
+}
+
+header .botao-container a {
+    width: 99%;
+
+    text-align: center;
+}
+
+header .botao-container a:hover {
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+header .botao-container img {
+    width: 3vw;
+}

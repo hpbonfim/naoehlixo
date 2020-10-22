@@ -1,0 +1,19 @@
+.projetos {
+    position: relative;
+}
+
+.projetos .background {
+    width: 99vw;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+.projetos .projetos-text-container {
+    position: absolute;
+    width: 100;
+    height: 100vh;
+    top: 0;
+}
