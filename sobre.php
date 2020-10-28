@@ -1,17 +1,18 @@
-<?php 
+<?php
 $PROJETO = "NÃO É LIXO";
-$TITLE = "Sobre"; 
+$TITLE = "Sobre";
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/global/header.css">
     <link rel="stylesheet" href="./styles/global/style.css">
     <link rel="stylesheet" href="./styles/global/rodape.css">
-    <title><?php echo $TITLE;?> - Não é Lixo</title>
+    <title><?php echo $TITLE; ?> - Não é Lixo</title>
 </head>
 
 <body>
@@ -20,7 +21,7 @@ $TITLE = "Sobre";
             <img src="./images/global/logo.png" alt="logo" class="logo">
         </div>
         <div class="title-container">
-            <h1><?php echo $PROJETO;?></h1>
+            <h1><?php echo $PROJETO; ?></h1>
         </div>
         <div class="subtitle-container">
             <p>Um projeto da comunidade para a comunidade!</p>
@@ -34,11 +35,10 @@ $TITLE = "Sobre";
             </div>
         </div>
     </header>
-    
+
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="container">
-        <h1><?php echo $PROJETO;?></h1>
-
+        // CARLOS
     </div>
 </body>
 

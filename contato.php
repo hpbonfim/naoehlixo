@@ -37,7 +37,7 @@ $TITLE = "Contato";
     
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="container">
-        <h1><?php echo $PROJETO;?></h1>
+        // CARLOS
 
     </div>
 </body>
