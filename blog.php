@@ -38,7 +38,7 @@
 
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="container">
-        <h1><?php echo $PROJETO;?></h1>
+        <h1>// DUDA</h1>
 
     </div>
 </body>
