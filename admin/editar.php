@@ -1,22 +1,22 @@
 <?php include_once('../banco-de-dados/conexao.php');
 
 // PEGA AS INFORMAÇOES DO BANCO
-$ID_PROJETO = $_GET['ID'];
-$opcao = isset($ID_PROJETO) ? $ID_PROJETO : false;
+$ID_PRODUTO = $_GET['ID'];
+$opcao = isset($ID_PRODUTO) ? $ID_PRODUTO : false;
 
 if ($opcao) {
-    $sql = "SELECT * FROM projetos WHERE id_projeto = '$ID_PROJETO'";
+    $sql = "SELECT * FROM projetos WHERE id_projeto = '$ID_PRODUTO'";
     $resultado = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($resultado) <= 0) {
         // retorna a listagem se não existir o id digitado
         echo "<script>alert('Página invalida')</script>";
-        echo "<script>window.location.href='listar.php'</script>";
+        echo "<script>window.location.href='index.php'</script>";
     }
 } else {
     // Retorna a listagem se caso ocorra da pessoa digitar o endereço (http://localhost/editar.php?id=1) sem o (?id=1)
     echo "<script>alert('Página invalida')</script>";
-    echo "<script>window.location.href='listar.php'</script>";
+    echo "<script>window.location.href='index.php'</script>";
 }
 
 // FIM
@@ -24,6 +24,7 @@ if ($opcao) {
 $SALVAR = $_POST['SALVAR'];
 
 if (isset($SALVAR)) {
+    $id = $_POST['id_projeto'];
     $nome = $_POST['nome_projeto'];
     $coordenadas = $_POST['coordenadas_projeto'];
     $endereco = $_POST['endereco_projeto'];
@@ -31,14 +32,16 @@ if (isset($SALVAR)) {
     $imagem = $_POST['imagem_projeto'];
     $site = $_POST['site_projeto'];
     $descricao = $_POST['descricao_projeto'];
+    $categoria = $_POST['categoria_projeto'];
+    $horarios = $_POST['horarios_projeto'];
 
-    $update = "UPDATE projetos SET nome_projeto='$nome',coordenadas_projeto='$coordenadas',endereco_projeto='$endereco',telefone_projeto='$telefone',imagem_projeto='$imagem',site_projeto='$site',descricao_projeto='$descricao' WHERE id_projeto=$id";
+    $update = "UPDATE projetos SET nome_projeto='$nome', coordenadas_projeto='$coordenadas', endereco_projeto='$endereco', telefone_projeto='$telefone', imagem_projeto='$imagem', site_projeto='$site', descricao_projeto='$descricao', categoria_projeto='$categoria', horarios_projeto='$horarios' WHERE id_projeto=$id";
 
     if (mysqli_query($conn, $update)) {
         echo "<script> alert('Editado com sucesso!')</script>";
         echo "<script> window.location.href='listar.php'</script>";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Error: " . $update . "<br>" . mysqli_error($conn);
     }
 }
 
@@ -132,6 +135,18 @@ if (isset($SALVAR)) {
                     <label for="descricao_projeto">Descrição do projeto</label>
                     <textarea id="descricao_projeto" name="descricao_projeto" type="text" class="form-control" placeholder="Descrição do projeto" required><?php echo $info['descricao_projeto']; ?></textarea>
                     <br>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-4">
+                        <label for="categoria_projeto">Categoria do projeto</label>
+                        <input id="categoria_projeto" name="categoria_projeto" type="text" class="form-control" placeholder="categoria do projeto" value="<?php echo $info['categoria_projeto']; ?>" required>
+                    </div>
+
+                    <div class="col-8">
+                        <label for="horarios_projeto">horário do projeto</label>
+                        <input id="horarios_projeto" name="horarios_projeto" type="text" class="form-control" placeholder="horarios do projeto" value="<?php echo $info['horarios_projeto']; ?>" required>
+                    </div>
                 </div>
 
             <?php } ?>

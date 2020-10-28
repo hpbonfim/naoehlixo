@@ -52,7 +52,7 @@ if (mysqli_query($conn, $sql_projetos)) {
 
     <br><br>
 
-    <div class="container-lg">
+    <div class="container-fluid">
 
         <a href='index.php' style="text-decoration: none; color: white;">
             <button type="button" class="btn btn-primary btn-lg btn-block">
@@ -87,7 +87,7 @@ if (mysqli_query($conn, $sql_projetos)) {
 
         <br><br>
 
-        <table class="table table-sm" style="text-align: center;">
+        <table class="table table-sm" >
             <thead class="thead-dark">
                 <th>Código</th>
                 <th>Nome do Projeto</th>
@@ -97,6 +97,8 @@ if (mysqli_query($conn, $sql_projetos)) {
                 <th>Imagem do projeto</th>
                 <th>Site do projeto</th>
                 <th>Descrição do projeto</th>
+                <th>Categoria do projeto</th>
+                <th>Horarios do projeto</th>
                 <th>Ações</th>
             </thead>
 
@@ -111,6 +113,8 @@ if (mysqli_query($conn, $sql_projetos)) {
                     <td><?php echo $info['imagem_projeto']; ?></td>
                     <td><?php echo $info['site_projeto']; ?></td>
                     <td><?php echo $info['descricao_projeto']; ?></td>
+                    <td><?php echo $info['categoria_projeto']; ?></td>
+                    <td><?php echo $info['horarios_projeto']; ?></td>
                     <td style="text-align: center;">
                         <a class="badge badge-info" href="editar.php?ID=<?php echo $info['id_projeto']; ?>">Editar</a>
                         <a class="badge badge-danger" onclick="confirmarRemocao(<?php echo $info['id_projeto']; ?>)">Excluir</a>

@@ -10,8 +10,10 @@ if (isset($SALVAR)) {
     $imagem = $_POST['imagem_projeto'];
     $site = $_POST['site_projeto'];
     $descricao = $_POST['descricao_projeto'];
+    $categoria = $_POST['categoria_projeto'];
+    $horarios = $_POST['horarios_projeto'];
 
-    $inserir = "INSERT INTO projetos (nome_projeto, coordenadas_projeto, endereco_projeto, telefone_projeto, imagem_projeto, site_projeto, descricao_projeto) VALUES ('$nome','$coordenadas','$endereco','$telefone','$imagem','$site','$descricao')";
+    $inserir = "INSERT INTO projetos (nome_projeto, coordenadas_projeto, endereco_projeto, telefone_projeto, imagem_projeto, site_projeto, descricao_projeto, categoria_projeto, horarios_projeto) VALUES ('$nome','$coordenadas','$endereco','$telefone','$imagem','$site','$descricao', '$categoria', '$horarios')";
 
 
     if (mysqli_query($conn, $inserir)) {
@@ -105,6 +107,18 @@ if (isset($SALVAR)) {
                 <label for="descricao_projeto">Descrição do projeto</label>
                 <textarea id="descricao_projeto" name="descricao_projeto" type="text" class="form-control" placeholder="Descrição do projeto" required></textarea>
                 <br>
+            </div>
+
+            <div class="form-row">
+                <div class="col-4">
+                    <label for="categoria_projeto">Categoria do projeto</label>
+                    <input id="categoria_projeto" name="categoria_projeto" type="text" class="form-control" placeholder="categoria do projeto" required>
+                </div>
+
+                <div class="col-8">
+                    <label for="horarios_projeto">horario do projeto</label>
+                    <input id="horarios_projeto" name="horarios_projeto" type="text" class="form-control" placeholder="horarios do projeto" required>
+                </div>
             </div>
 
             <button type="submit" id="SALVAR" name="SALVAR" class="btn btn-success btn-lg btn-block">Criar projeto</button>
