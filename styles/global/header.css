@@ -1,0 +1,100 @@
+header {
+    background-color: #355F14;
+    height: 15vw;
+    width: 100vw;
+}
+
+header .top-container,
+.title-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 99%;
+    
+}
+
+/* TOP CONTAINER */
+header .top-container {
+    justify-content: space-between;
+    width: 1px;
+}
+
+header .top-container .logo {
+    width: 15vw;
+}
+
+
+header .nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2%;
+}
+
+header .nav-container .nav {
+    display: flex;
+    justify-content: space-between;
+    width: 33%;
+}
+
+header .nav-container a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1vw;
+    
+}
+
+header .nav-container a:hover {
+    font-weight: bold;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    
+}
+
+/* TITLE CONTAINER */
+header .title-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -1%;
+    width: 100%;
+    height: auto;
+    
+    
+}
+
+header .title-container h1 {
+    font-size: 4vw;
+    color: white;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+
+}
+
+header .title-container h1:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+header .subtitle-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 6%;
+    
+}
+
+header .subtitle-container p {
+    color: white;
+    font-size: 1.2vw;
+    
+}

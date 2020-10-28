@@ -24,6 +24,7 @@ if ($opcao) {
 $SALVAR = $_POST['SALVAR'];
 
 if (isset($SALVAR)) {
+
     $id = $_POST['id_projeto'];
     $nome = $_POST['nome_projeto'];
     $coordenadas = $_POST['coordenadas_projeto'];
@@ -86,13 +87,6 @@ if (isset($SALVAR)) {
         <br><br>
 
 
-
-
-
-
-
-
-
         <form action="" method="post">
             <?php while ($info = $resultado->fetch_array()) { ?>
 
@@ -116,7 +110,7 @@ if (isset($SALVAR)) {
                 <div class="form-row">
                     <div class="col-4">
                         <label for="telefone_projeto">Telefone do projeto</label>
-                        <input id="telefone_projeto" name="telefone_projeto" type="number" class="form-control" placeholder="Telefone do projeto" value="<?php echo $info['telefone_projeto']; ?>" required>
+                        <input id="telefone_projeto" name="telefone_projeto" type="text" class="form-control" placeholder="Telefone do projeto" value="<?php echo $info['telefone_projeto']; ?>">
                     </div>
 
                     <div class="col-8">
@@ -145,7 +139,7 @@ if (isset($SALVAR)) {
 
                     <div class="col-8">
                         <label for="horarios_projeto">horário do projeto</label>
-                        <input id="horarios_projeto" name="horarios_projeto" type="text" class="form-control" placeholder="horarios do projeto" value="<?php echo $info['horarios_projeto']; ?>" required>
+                        <input id="horarios_projeto" name="horarios_projeto" type="text" class="form-control" placeholder="horarios do projeto" value="<?php echo $info['horarios_projeto']; ?>">
                     </div>
                 </div>
 

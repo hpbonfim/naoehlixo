@@ -1,3 +1,8 @@
+<?php 
+$PROJETO = "NÃO É LIXO";
+$TITLE = "Início"; 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -11,7 +16,7 @@
     <link rel="stylesheet" href="./styles/index/blog.css">
     <link rel="stylesheet" href="./styles/global/style.css">
     <link rel="stylesheet" href="./styles/global/rodape.css">
-    <title>Início - Não é Lixo</title>
+    <title><?php echo $TITLE;?> - Não é Lixo</title>
 </head>
 
 <body>
@@ -20,16 +25,16 @@
         <div class="top-container">
             <img src="./images/global/logo.png" alt="logo" class="logo">
             <div class="nav-container">
-                <a href="http://" class="navbar">INÍCIO</a>
-                <a href="http://" class="navbar">SOBRE</a>
-                <a href="http://" class="navbar">PROJETOS</a>
-                <a href="http://" class="navbar">BLOG</a>
-                <a href="http://" class="navbar">CONTATO</a>
+                <a href="index.php" class="navbar">INÍCIO</a>
+                <a href="sobre.php" class="navbar">SOBRE</a>
+                <a href="projetos.php" class="navbar">PROJETOS</a>
+                <a href="blog.php" class="navbar">BLOG</a>
+                <a href="contato.php" class="navbar">CONTATO</a>
                 <a href="mapa.php" class="navbar">MAPA DE PONTOS DE COLETA</a>
             </div>
         </div>
         <div class="title-container">
-            <h1>NÃO É LIXO</h1>
+            <h1><?php echo $PROJETO;?></h1>
         </div>
         <div class="subtitle-container">
             <h1>VAMOS CRIAR UM MUNDO MAIS LIMPO E SUSTENTÁVEL?</h1>

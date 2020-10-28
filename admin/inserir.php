@@ -3,15 +3,18 @@
 $SALVAR = $_POST['SALVAR'];
 
 if (isset($SALVAR)) {
+
+    $latlng = "{lat: ". $_POST['lat_projeto'] .", lng: ". $_POST['lng_projeto'] . "}";
+
     $nome = $_POST['nome_projeto'];
-    $coordenadas = $_POST['coordenadas_projeto'];
+    $coordenadas = $latlng;
     $endereco = $_POST['endereco_projeto'];
     $telefone = $_POST['telefone_projeto'];
     $imagem = $_POST['imagem_projeto'];
     $site = $_POST['site_projeto'];
     $descricao = $_POST['descricao_projeto'];
     $categoria = $_POST['categoria_projeto'];
-    $horarios = $_POST['horarios_projeto'];
+    $horarios = $_POST['horarios_projeto'] == null ? "Horário não especificado" : $_POST['horarios_projeto'];
 
     $inserir = "INSERT INTO projetos (nome_projeto, coordenadas_projeto, endereco_projeto, telefone_projeto, imagem_projeto, site_projeto, descricao_projeto, categoria_projeto, horarios_projeto) VALUES ('$nome','$coordenadas','$endereco','$telefone','$imagem','$site','$descricao', '$categoria', '$horarios')";
 
@@ -34,7 +37,7 @@ if (isset($SALVAR)) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar</title>
+    <title>Inserir no Banco</title>
 </head>
 
 <style>
@@ -75,9 +78,16 @@ if (isset($SALVAR)) {
                 <input id="nome_projeto" name="nome_projeto" type="text" class="form-control" placeholder="Nome do projeto" required>
             </div>
 
-            <div class="form-group">
-                <label for="coordenadas_projeto">Coordenadas do projeto</label>
-                <input id="coordenadas_projeto" name="coordenadas_projeto" type="text" class="form-control" placeholder="Coordenadas do projeto" required>
+            <div class="form-row">
+                <div class="col-6">
+                    <label for="lat_projeto">Latitude</label>
+                    <input id="lat_projeto" name="lat_projeto" type="text" class="form-control" placeholder="Latitude do projeto" required>
+                </div>
+
+                <div class="col-6">
+                    <label for="lng_projeto">Longitude</label>
+                    <input id="lng_projeto" name="lng_projeto" type="text" class="form-control" placeholder="Longitude do projeto" required>
+                </div>
             </div>
 
             <div class="form-group">
@@ -88,7 +98,7 @@ if (isset($SALVAR)) {
             <div class="form-row">
                 <div class="col-4">
                     <label for="telefone_projeto">Telefone do projeto</label>
-                    <input id="telefone_projeto" name="telefone_projeto" type="number" class="form-control" placeholder="Telefone do projeto" required>
+                    <input id="telefone_projeto" name="telefone_projeto" type="text" class="form-control" placeholder="Telefone do projeto">
                 </div>
 
                 <div class="col-8">
@@ -117,7 +127,7 @@ if (isset($SALVAR)) {
 
                 <div class="col-8">
                     <label for="horarios_projeto">horario do projeto</label>
-                    <input id="horarios_projeto" name="horarios_projeto" type="text" class="form-control" placeholder="horarios do projeto" required>
+                    <input id="horarios_projeto" name="horarios_projeto" type="text" class="form-control" placeholder="horarios do projeto">
                 </div>
             </div>
 

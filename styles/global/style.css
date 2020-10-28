@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 
-html, body {
+html,
+body {
     top: 0;
     left: 0;
     right: 0;
@@ -17,6 +18,8 @@ html, body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    
 }
 
+img {
+    pointer-events: none;
+}
