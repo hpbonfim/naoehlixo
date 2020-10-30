@@ -1,5 +1,12 @@
 <?php include_once('../banco-de-dados/conexao.php'); 
 
+session_start();
+if ((!isset($_SESSION['email_admin']) == true) && (!isset($_SESSION['senha_admin']) == true)) {
+    unset($_SESSION['email_admin']);
+    unset($_SESSION['senha_admin']);
+    header('location:login.php');
+}
+
 $ID_PROJETO = $_GET['ID'];
 
 if (isset($ID_PROJETO)) {

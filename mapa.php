@@ -41,25 +41,20 @@ if (mysqli_query($conn, $sql_projetos)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <link rel="stylesheet" href="./styles/mapa/index.css">
     <link rel="stylesheet" href="./styles/global/header.css">
     <link rel="stylesheet" href="./styles/global/style.css">
     <link rel="stylesheet" href="./styles/global/rodape.css">
-    <title><?php echo $TITLE;?> - Não é Lixo</title>
-
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="./styles/mapa/index.css">
+    <title><?php echo $TITLE; ?> - Não é Lixo</title>
 </head>
 
 <body>
-<!--    
-<header>
+    <header>
         <div class="top-container">
-            <img src="./images/global/logo.png" alt="logo" class="logo">
+            <img src="../images/global/logo.png" alt="logo" class="logo">
         </div>
         <div class="title-container">
-            <h1><?php echo $PROJETO;?></h1>
+            <h1><?php echo $PROJETO; ?></h1>
         </div>
         <div class="subtitle-container">
             <p>Um projeto da comunidade para a comunidade!</p>
@@ -72,10 +67,42 @@ if (mysqli_query($conn, $sql_projetos)) {
                 <a href="mapa.php" class="navbar">MAPA DE PONTOS DE COLETA</a>
             </div>
         </div>
+        <br><br>
     </header>
--->
+    <section class="busca">
+        <br><br><br>
+    </section>
+    <section class="tags">
+        <br><br><br>
+    </section>
     
-    <div id="map"></div>
+    <section class="mapa">
+        <div id="map"></div>
+    </section>
+
+    <footer id="footer">
+        <img src="../images/global/rodape/background.png" class="background" alt="background header">
+        <div class="text-container">
+        <a style="text-decoration: none;" href="/admin/login.php"><p>&copy; NÃO É LIXO </p></a>
+        </div>
+        <div class="social-container">
+            <a href="">
+                <img src="../images/global/rodape/facebook.png" alt="facebook">
+            </a>
+            <a href="">
+                <img src="../images/global/rodape/instagram.png" alt="instagram">
+            </a>
+            <a href="">
+                <img src="../images/global/rodape/youtube.png" alt="youtube">
+            </a>
+            <a href="">
+                <img src="../images/global/rodape/whatsapp.png" alt="whatsapp">
+            </a>
+            <a href="">
+                <img src="../images/global/rodape/twitter.png" alt="twitter">
+            </a>
+        </div>
+    </footer>
     <script>
         /* CRIAÇÃO DO MAPA  ----------------------- */
         const map = L.map('map').setView([-23.5708175, -46.647965], 11)

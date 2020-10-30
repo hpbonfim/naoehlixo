@@ -1,5 +1,12 @@
 <?php include_once('../banco-de-dados/conexao.php');
 
+session_start();
+if ((!isset($_SESSION['email_admin']) == true) && (!isset($_SESSION['senha_admin']) == true)) {
+    unset($_SESSION['email_admin']);
+    unset($_SESSION['senha_admin']);
+    header('location:login.php');
+}
+
 // PEGA AS INFORMAÇOES DO BANCO
 $ID_PRODUTO = $_GET['ID'];
 $opcao = isset($ID_PRODUTO) ? $ID_PRODUTO : false;
