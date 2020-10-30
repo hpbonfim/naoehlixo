@@ -2,8 +2,9 @@
     display: flex;
     align-self: center;
     justify-self: center;
-    margin-top: auto;
-    width: 90vw;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: 80vw;
     height: 50vw;
 }
 
@@ -11,5 +12,152 @@
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    border: solid 1px black;
+    border: outset 1px black;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.texto {
+    text-align: center;
+}
+
+.box {
+    background-color: #c4c4c4;
+    font-size: 1.2vw;
+    font-weight: bold;
+    border: transparent;
+    cursor: pointer;
+    margin-top: 1vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    width: 10vw;
+    height: 4vw;
+}
+
+.busca {
+    width: 100%;
+    height: 100%;
+}
+
+
+.busca .box {
+    margin-top: 20px;
+    width: 90vw;
+    height: 4vw;
+    border-radius: 50px;
+    border: 2px inset #355f14;
+    font-weight: 200;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.tags-primaria,
+.tags-secundaria,
+.tags-todos {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100vw;
+    height: auto;
+    text-align: center;
+}
+
+.tags-primaria .box {
+    border-radius: 50px;
+}
+
+.tags-secundaria .box {
+    border-radius: 10px;
+}
+
+.tags-todos .box {
+    width: 30vw;
+}
+
+.papel {
+    border: 0.5vw outset #066471;
+}
+
+.papel:hover {
+    border-style: inset;
+}
+
+
+.vidro {
+    border: 0.5vw outset #355f14;
+}
+
+.vidro:hover {
+    border-style: inset;
+}
+
+.plastico {
+    border: 0.5vw outset #9f0c0c;
+}
+
+.plastico:hover {
+    border-style: inset;
+}
+
+.metal {
+    border: 0.5vw outset#c89c00;
+}
+
+.metal:hover {
+    border-style: inset;
+}
+
+.organicos {
+    border: 0.5vw outset black;
+}
+
+.organicos:hover {
+    background-color: c4c4c450;
+    border-style: inset;
+}
+
+.tecido {
+    border: 0.5vw outset #831b2c;
+}
+
+.tecido:hover {
+    border-style: inset;
+}
+
+.madeira {
+    border: 0.5vw outset #f97e33;
+}
+
+.madeira:hover {
+    border-style: inset;
+}
+
+.borracha {
+    border: 0.5vw outset #35241c;
+}
+
+.borracha:hover {
+    border-style: inset;
+}
+
+.baterias {
+    border: 0.5vw outset #5e3e4e;
+}
+
+.baterias:hover {
+    border-style: inset;
+}
+
+.todos {
+    border: 0.5vw outset #c4c4c4;
+    border-style: outset;
+}
+
+.todos:hover {
+    border-style: inset;
 }

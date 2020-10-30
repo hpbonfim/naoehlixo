@@ -5,9 +5,9 @@ $TITLE = "Login";
 
 session_start();
 $submit = $_POST['autorizado'];
-$autorizar = isset($submit);
+$autorizar = isset($submit) ? $submit : false;
 
-if (isset($autorizar)) {
+if ($autorizar) {
     $email = $_POST['email_admin'];
     $senha = $_POST['senha_admin'];
 

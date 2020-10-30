@@ -9,7 +9,7 @@ header .top-container,
     position: absolute;
     display: flex;
     justify-content: center;
-    width: 99%;
+    width: 100vw;
     
 }
 
@@ -27,7 +27,7 @@ header .top-container .logo {
 header .nav-container {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     margin-top: 2%;
 }
 
@@ -62,9 +62,8 @@ header .title-container {
     display: flex;
     justify-content: center;
     margin-top: -1%;
-    width: 100%;
+    width: 100vw;
     height: auto;
-    
     
 }
 

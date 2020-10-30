@@ -69,13 +69,68 @@ if (mysqli_query($conn, $sql_projetos)) {
         </div>
         <br><br>
     </header>
+
+    <section class="texto">
+        <h1>Busque aqui os locais próximos de sua residência</h1>
+        <p>Reunimos neste mapa, todos os pontos de coleta que existem na comunidade!</p>
+    </section>
+
     <section class="busca">
-        <br><br><br>
+        <form action="" method="">
+            <input type="text" name="busca" id="" class="box">
+        </form>
+        <br>
     </section>
-    <section class="tags">
-        <br><br><br>
+
+    <section class="tags-primaria">
+        <form action="" method="">
+            <button type="submit" value="papel" name="tags" class="box papel">
+                PAPEL
+            </button>
+            <button type="submit" value="vidro" name="tags" class="box vidro">
+                VIDRO
+            </button>
+            <button type="submit" value="plástico" name="tags" class="box plastico">
+                PLÁSTICO
+            </button>
+            <button type="submit" value="metal" name="tags" class="box metal">
+                METAL
+            </button>
+            <button type="submit" value="orgânicos" name="tags" class="box organicos">
+                ORGÂNICOS
+            </button>
+        </form>
+        <br>
     </section>
-    
+
+    <section class="tags-secundaria">
+        <form action="" method="">
+            <button type="submit" value="tecido" name="tags" class="box tecido">
+                TECIDO USADO
+            </button>
+            <button type="submit" value="madeira" name="tags" class="box madeira">
+                MADEIRA, MÓVEIS
+            </button>
+            <button type="submit" value="borracha" name="tags" class="box borracha">
+                PNEUS E BORRACHAS
+            </button>
+            <button type="submit" value="baterias" name="tags" class="box baterias">
+                PILHAS E BATERIAS
+            </button>
+        </form>
+        <br>
+    </section>
+
+    <section class="tags-todos">
+        <form action="" method="">
+            <button type="submit" value="todos" name="tags" class="box todos">
+                MOSTRAR TODOS
+            </button>
+        </form>
+        <br>
+    </section>
+
+
     <section class="mapa">
         <div id="map"></div>
     </section>
@@ -83,7 +138,9 @@ if (mysqli_query($conn, $sql_projetos)) {
     <footer id="footer">
         <img src="../images/global/rodape/background.png" class="background" alt="background header">
         <div class="text-container">
-        <a style="text-decoration: none;" href="/admin/login.php"><p>&copy; NÃO É LIXO </p></a>
+            <a style="text-decoration: none;" href="/admin/login.php">
+                <p>&copy; NÃO É LIXO </p>
+            </a>
         </div>
         <div class="social-container">
             <a href="">
@@ -103,25 +160,26 @@ if (mysqli_query($conn, $sql_projetos)) {
             </a>
         </div>
     </footer>
-    <script>
-        /* CRIAÇÃO DO MAPA  ----------------------- */
-        const map = L.map('map').setView([-23.5708175, -46.647965], 11)
+</body>
+<script>
+    /* CRIAÇÃO DO MAPA  ----------------------- */
+    const map = L.map('map').setView([-23.5708175, -46.647965], 11)
 
-        L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            tileSize: 256,
-            zoomOffset: 0
-        }).addTo(map)
-        L.control.scale().addTo(map)
+    L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        tileSize: 256,
+        zoomOffset: 0
+    }).addTo(map)
+    L.control.scale().addTo(map)
 
 
-        /* CRIAÇÃO DO MAPA  ----------------------- */
-        const adicionarPin = (nome, coordenadas, endereco, telefone, imagem, site, descricao, categoria, horarios) => {
-            let marker = L.marker(coordenadas).addTo(map);
+    /* CRIAÇÃO DO MAPA  ----------------------- */
+    const adicionarPin = (nome, coordenadas, endereco, telefone, imagem, site, descricao, categoria, horarios) => {
+        let marker = L.marker(coordenadas).addTo(map);
 
-            let mostrarTelefone = telefone == null || telefone == undefined || telefone == "" || telefone == " " ? "&nbsp;" : `<br><br><small><b>Telefone:&nbsp;</b> ${telefone}</small>`;
+        let mostrarTelefone = telefone == null || telefone == undefined || telefone == "" || telefone == " " ? "&nbsp;" : `<br><br><small><b>Telefone:&nbsp;</b> ${telefone}</small>`;
 
-            let info = `
+        let info = `
             <h1 style="text-align: center;">${nome}</h1>
             <img src='${imagem}' style="display: block; margin: auto; width: 100%; max-width: 200px">
             <br><br>
@@ -137,14 +195,12 @@ if (mysqli_query($conn, $sql_projetos)) {
             <small><b>Horario de funcionamento:&nbsp;</b>${horarios}</small>
             <br><br>
             `
-            marker.bindPopup(info)
-        }
+        marker.bindPopup(info)
+    }
 
-        <?php while ($info = $resultado->fetch_array()) { ?>
-            adicionarPin('<?php echo $info['nome_projeto']; ?>', <?php echo $info['coordenadas_projeto']; ?>, '<?php echo $info['endereco_projeto']; ?>', '<?php echo $info['telefone_projeto']; ?>', '<?php echo $info['imagem_projeto']; ?>', '<?php echo $info['site_projeto']; ?>', '<?php echo $info['descricao_projeto']; ?>', '<?php echo $info['categoria_projeto']; ?>', '<?php echo $info['horarios_projeto']; ?>')
-        <?php } ?>
-    </script>
-
-</body>
+    <?php while ($info = $resultado->fetch_array()) { ?>
+        adicionarPin('<?php echo $info['nome_projeto']; ?>', <?php echo $info['coordenadas_projeto']; ?>, '<?php echo $info['endereco_projeto']; ?>', '<?php echo $info['telefone_projeto']; ?>', '<?php echo $info['imagem_projeto']; ?>', '<?php echo $info['site_projeto']; ?>', '<?php echo $info['descricao_projeto']; ?>', '<?php echo $info['categoria_projeto']; ?>', '<?php echo $info['horarios_projeto']; ?>')
+    <?php } ?>
+</script>
 
 </html>
